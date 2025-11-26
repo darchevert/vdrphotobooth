@@ -145,6 +145,13 @@
             color: var(--color-white);
             font-size: 3rem;
             font-weight: bold;
+            overflow: hidden;
+        }
+
+        .model-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .model-info {
@@ -274,67 +281,19 @@
         const models = [
             {
                 id: 1,
-                name: "Classique Mariage",
-                photos: 4,
+                name: "Cadre Oktoberfest",
+                photos: 1,
                 orientation: "portrait",
                 category: "mariage",
-                emoji: "💒"
+                image: "Cadre%20photobooth%20BLB%20Oktoberfest%20Accueil.png"
             },
             {
                 id: 2,
-                name: "Duo Paysage",
+                name: "Modèle Paysage",
                 photos: 2,
                 orientation: "landscape",
-                category: "soiree",
-                emoji: "🌆"
-            },
-            {
-                id: 3,
-                name: "Triple Anniversaire",
-                photos: 3,
-                orientation: "portrait",
                 category: "anniversaire",
-                emoji: "🎉"
-            },
-            {
-                id: 4,
-                name: "Solo Portrait",
-                photos: 1,
-                orientation: "portrait",
-                category: "soiree",
-                emoji: "📷"
-            },
-            {
-                id: 5,
-                name: "Quatre Paysages",
-                photos: 4,
-                orientation: "landscape",
-                category: "entreprise",
-                emoji: "🏢"
-            },
-            {
-                id: 6,
-                name: "Duo Mariage",
-                photos: 2,
-                orientation: "portrait",
-                category: "mariage",
-                emoji: "💕"
-            },
-            {
-                id: 7,
-                name: "Triple Entreprise",
-                photos: 3,
-                orientation: "landscape",
-                category: "entreprise",
-                emoji: "👔"
-            },
-            {
-                id: 8,
-                name: "Solo Paysage",
-                photos: 1,
-                orientation: "landscape",
-                category: "anniversaire",
-                emoji: "🎈"
+                image: "landscape-1366x1024.png"
             },
         ];
 
@@ -377,7 +336,7 @@
                 const card = document.createElement('div');
                 card.className = 'model-card visible';
                 card.innerHTML = `
-                    <div class="model-image">${model.emoji}</div>
+                    <div class="model-image"><img src="${model.image}" alt="${model.name}"></div>
                     <div class="model-info">
                         <div class="model-name">${model.name}</div>
                         <div class="model-details">
